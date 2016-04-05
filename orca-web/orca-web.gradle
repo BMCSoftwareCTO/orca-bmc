@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
   // Add subproject dependencies here
-  compile project(':orca-bmc-clouddriver')
+  compile project(':orca-clouddriver')
 
   provided spinnaker.dependency('groovy')
 
@@ -85,6 +85,9 @@ ospackage {
   postInstall file("${project.buildDir}/pkg_scripts/postInstall.sh")
   preUninstall  file("${project.buildDir}/pkg_scripts/preUninstall.sh")
   postUninstall file("${project.buildDir}/pkg_scripts/postUninstall.sh")
+
+  // depend on the main service
+  requires 'spinnaker-orca'
 }
 
 task preparePkgScripts(type: Copy) {

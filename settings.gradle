@@ -1,7 +1,7 @@
 // Specify name of service
-rootProject.name="orca-bmc"
+rootProject.name="orca"
 
-include 'orca-bmc-clouddriver','orca-bmc-web'
+include 'orca-clouddriver','orca-web'
 
 def setBuildFile(project) {
   project.buildFileName = "${project.name}.gradle"
